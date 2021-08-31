@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>Sav Portfolio</title>
+	</head>
+	<body>
+		<!-- App Part -->
+		<div id="root">
+			<div id="routes">
+				<ul>
+					<li>
+						<a class="parallelogram" data-route="/">
+							<span class="skew-fix">Home</span>
+						</a>
+					</li>
+					<li>
+						<a class="parallelogram" data-route="/#about">
+							<span class="skew-fix">About</span>
+						</a>
+					</li>
+					<li>
+						<a class="parallelogram" data-route="/#contact">
+							<span class="skew-fix">Contact</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div id="app"></div>
+		</div>
+		<!-- Convas Part -->
+		<canvas class="webgl"></canvas>
+		<div class="loading-bar"></div>
+	</body>
+</html>
