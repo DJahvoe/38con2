@@ -3,7 +3,7 @@ import { createStars } from './factory';
 
 export const starsConf = {
 	count: 7500,
-	size: 30,
+	size: 15,
 	color: { r: 255, g: 255, b: 255 },
 	minPos: { x: -1000, y: -1000, z: -1000 },
 	maxPos: { x: 1000, y: 1000, z: 1000 },

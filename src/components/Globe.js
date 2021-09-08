@@ -2,6 +2,11 @@ import defaultConf from './Object3D';
 import { createGlobe } from './factory';
 
 export const globeConf = {
+	position: {
+		x: -5000,
+		y: 0,
+		z: 0,
+	},
 	radius: 100,
 	detail: 15,
 	groundColor: 0x417b2b,

@@ -1,15 +1,28 @@
 import * as THREE from 'three';
 import SimplexNoise from 'simplex-noise';
 
-import { getRandom3dCoord, getRandomArbitrary } from '../utils/function';
+import {
+	getRandom3dCoord,
+	getRandomArbitrary,
+	hexToRgb,
+} from '../utils/function';
 
 import atmosphereVertexShader from '../shaders/atmosphere/vertex.glsl';
 import atmosphereFragmentShader from '../shaders/atmosphere/fragment.glsl';
+import scene from '../config/scene';
 
 const simplex = new SimplexNoise();
 
 export function createGlobe(globeConf, defaultConf) {
-	const { radius, detail, groundColor, waterColor, noiseConf } = globeConf;
+	const {
+		radius,
+		detail,
+		groundColor,
+		waterColor,
+		atmosphereColor,
+		noiseConf,
+		position,
+	} = globeConf;
 	const { noiseF, noiseD, noiseWaterTreshold, noiseWaterLevel } = noiseConf;
 	const time = Date.now() * 0.001;
 
@@ -72,6 +85,7 @@ export function createGlobe(globeConf, defaultConf) {
 	const globeMesh = new THREE.Mesh(geometry, material);
 
 	// atmosphere mesh
+	const atmosphereColorRgb = hexToRgb(atmosphereColor);
 	const atmosphereMesh = new THREE.Mesh(
 		// new THREE.SphereGeometry(radius * 1.15, 50, 50),
 		geometry,
@@ -82,7 +96,11 @@ export function createGlobe(globeConf, defaultConf) {
 			side: THREE.BackSide,
 			uniforms: {
 				uColor: {
-					value: new THREE.Color(0.3, 0.6, 1.0),
+					value: new THREE.Color(
+						atmosphereColorRgb.r / 255,
+						atmosphereColorRgb.g / 255,
+						atmosphereColorRgb.b / 255
+					),
 				},
 			},
 		})
@@ -93,10 +111,8 @@ export function createGlobe(globeConf, defaultConf) {
 	const mesh = new THREE.Object3D();
 	mesh.add(globeMesh);
 	mesh.add(atmosphereMesh);
-	const { x, y, z } = defaultConf.position;
+	const { x, y, z } = position;
 	mesh.position.set(x, y - radius * 1.4, z);
-	// mesh.castShadow = true;
-	// mesh.receiveShadow = true;
 
 	return { mesh, globeConf, vNoise, dispV };
 }
@@ -107,15 +123,15 @@ export async function createRocket(gltfLoader, rocketConf, defaultConf) {
 	let rocketModel;
 	let gltf = await gltfLoader.loadAsync('/models/rocket/rocket.gltf');
 	rocketModel = gltf.scene;
-	gltf.scene.scale.set(scale, scale, scale);
-	gltf.scene.position.set(10, -2, 0);
+	rocketModel.scale.set(scale, scale, scale);
+	rocketModel.position.set(10, -2, 0);
 
 	// Rotate to (entering viewer) face
-	// gltf.scene.rotation.z = Math.PI * 0.5;
-	gltf.scene.rotateY(Math.PI * 0.5);
+	rocketModel.rotation.z = Math.PI * 0.5;
+	rocketModel.rotateY(Math.PI * 0.5);
 
-	gltf.scene.castShadow = true;
-	gltf.scene.receiveShadow = true;
+	rocketModel.castShadow = true;
+	rocketModel.receiveShadow = true;
 
 	rocket.add(rocketModel);
 	return rocket;
@@ -156,17 +172,6 @@ export function createStars(starsConf, defaultConf) {
 	/**
 	 * Material
 	 */
-	// const material = new THREE.ShaderMaterial({
-	// 	vertexShader: atmosphereVertexShader,
-	// 	fragmentShader: atmosphereFragmentShader,
-	// 	blending: THREE.AdditiveBlending,
-	// 	side: THREE.BackSide,
-	// 	uniforms: {
-	// 		uColor: {
-	// 			value: new THREE.Color(0.3, 0.6, 1.0),
-	// 		},
-	// 	},
-	// });
 	const material = new THREE.PointsMaterial({
 		size,
 		sizeAttenuation: true,
@@ -182,3 +187,24 @@ export function createStars(starsConf, defaultConf) {
 	stars.add(points);
 	return { mesh: stars };
 }
+
+// export function createStartingPlane(startingPlaneConf, defaultConf) {
+// 	const { position, scale, color } = startingPlaneConf;
+// 	const geometry = new THREE.PlaneBufferGeometry(scale.u, scale.v);
+// 	const material = new THREE.ShaderMaterial({
+// 		vertexShader: planeVertexShader,
+// 		fragmentShader: planeFragmentShader,
+// 		blending: THREE.AdditiveBlending,
+// 		side: THREE.DoubleSide,
+// 		uniforms: {
+// 			uColor: {
+// 				value: new THREE.Color(color.r, color.g, color.b),
+// 			},
+// 		},
+// 	});
+// 	const plane = new THREE.Mesh(geometry, material);
+// 	const { x, y, z } = position;
+// 	plane.position.set(x, y, z);
+// 	plane.rotateX(Math.PI / 2);
+// 	return plane;
+// }
