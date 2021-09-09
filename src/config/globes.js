@@ -12,9 +12,12 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/hoshimachi-suisei-gsap.png',
-			rightImageSrc: '/img/projects/hoshimachi-suisei-gsap.png',
-			mainImageSrc: '/img/projects/hoshimachi-suisei-gsap.png',
+			leftImageSrc:
+				require('../../static/img/projects/hoshimachi-suisei-gsap.png').default,
+			rightImageSrc:
+				require('../../static/img/projects/hoshimachi-suisei-gsap.png').default,
+			mainImageSrc:
+				require('../../static/img/projects/hoshimachi-suisei-gsap.png').default,
 			title: 'Hoshimachi GSAP',
 			description:
 				'Practicing GSAP by creating a simple website for Hololive Member - Hoshimachi Suisei',
@@ -35,9 +38,9 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/portal.png',
-			rightImageSrc: '/img/projects/portal.png',
-			mainImageSrc: '/img/projects/portal.png',
+			leftImageSrc: require('../../static/img/projects/portal.png').default,
+			rightImageSrc: require('../../static/img/projects/portal.png').default,
+			mainImageSrc: require('../../static/img/projects/portal.png').default,
 			title: '3D Portal',
 			description:
 				'3D Portal built using THREE.js which is a library for building WebGL application, most of the object inside of the project is built using Blender',
@@ -58,9 +61,12 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/sound-board.png',
-			rightImageSrc: '/img/projects/sound-board.png',
-			mainImageSrc: '/img/projects/sound-board.png',
+			leftImageSrc: require('../../static/img/projects/sound-board.png')
+				.default,
+			rightImageSrc: require('../../static/img/projects/sound-board.png')
+				.default,
+			mainImageSrc: require('../../static/img/projects/sound-board.png')
+				.default,
 			title: 'Sound Board',
 			description:
 				'Experimental project to create something similar to Wave.js, an audio visualization library for JavaScript',
@@ -81,9 +87,12 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/canvas-sine-wave.png',
-			rightImageSrc: '/img/projects/canvas-sine-wave.png',
-			mainImageSrc: '/img/projects/canvas-sine-wave.png',
+			leftImageSrc: require('../../static/img/projects/canvas-sine-wave.png')
+				.default,
+			rightImageSrc: require('../../static/img/projects/canvas-sine-wave.png')
+				.default,
+			mainImageSrc: require('../../static/img/projects/canvas-sine-wave.png')
+				.default,
 			title: 'Sine Wave',
 			description:
 				'Experimenting Canvas API by creating a simple animation using Sine function',
@@ -104,9 +113,12 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/galaxy-three-js.png',
-			rightImageSrc: '/img/projects/galaxy-three-js.png',
-			mainImageSrc: '/img/projects/galaxy-three-js.png',
+			leftImageSrc: require('../../static/img/projects/galaxy-three-js.png')
+				.default,
+			rightImageSrc: require('../../static/img/projects/galaxy-three-js.png')
+				.default,
+			mainImageSrc: require('../../static/img/projects/galaxy-three-js.png')
+				.default,
 			title: 'Galaxy',
 			description: 'Creating a galaxy object using library THREE.js',
 			viewUrl: 'https://djahvoe.github.io/threejs-galaxy-generator/',
@@ -126,9 +138,9 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/storelogy.png',
-			rightImageSrc: '/img/projects/storelogy.png',
-			mainImageSrc: '/img/projects/storelogy.png',
+			leftImageSrc: require('../../static/img/projects/storelogy.png').default,
+			rightImageSrc: require('../../static/img/projects/storelogy.png').default,
+			mainImageSrc: require('../../static/img/projects/storelogy.png').default,
 			title: 'Storelogy API',
 			description:
 				'Internship project in Picodio that requires to migrate and creating a new endpoint for their marketplace services called Storelogy',
@@ -149,9 +161,15 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/japanese-pitch-accent-demo.png',
-			rightImageSrc: '/img/projects/japanese-pitch-accent-demo.png',
-			mainImageSrc: '/img/projects/japanese-pitch-accent-demo.png',
+			leftImageSrc:
+				require('../../static/img/projects/japanese-pitch-accent-demo.png')
+					.default,
+			rightImageSrc:
+				require('../../static/img/projects/japanese-pitch-accent-demo.png')
+					.default,
+			mainImageSrc:
+				require('../../static/img/projects/japanese-pitch-accent-demo.png')
+					.default,
 			title: 'Japanese Pitch Accent Demo',
 			description:
 				'A simple SPA to demonstrate the pitch-accent classification from Japanese language for Japanese beginner',
@@ -172,9 +190,9 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/sav-rtk.png',
-			rightImageSrc: '/img/projects/sav-rtk.png',
-			mainImageSrc: '/img/projects/sav-rtk.png',
+			leftImageSrc: require('../../static/img/projects/sav-rtk.png').default,
+			rightImageSrc: require('../../static/img/projects/sav-rtk.png').default,
+			mainImageSrc: require('../../static/img/projects/sav-rtk.png').default,
 			title: 'RTK Quiz',
 			description:
 				'Side project to create a quiz, based on Remembering the Kanji book',
@@ -195,9 +213,12 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/uruha-rushia.png',
-			rightImageSrc: '/img/projects/uruha-rushia.png',
-			mainImageSrc: '/img/projects/uruha-rushia.png',
+			leftImageSrc: require('../../static/img/projects/uruha-rushia.png')
+				.default,
+			rightImageSrc: require('../../static/img/projects/uruha-rushia.png')
+				.default,
+			mainImageSrc: require('../../static/img/projects/uruha-rushia.png')
+				.default,
 			title: 'Uruha Rushia Opening',
 			description:
 				"Experimental project to create an animation using CSS and GSAP, to re-make the Hololive member's opening animation",
@@ -218,9 +239,9 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/sav-name.png',
-			rightImageSrc: '/img/projects/sav-name.png',
-			mainImageSrc: '/img/projects/sav-name.png',
+			leftImageSrc: require('../../static/img/projects/sav-name.png').default,
+			rightImageSrc: require('../../static/img/projects/sav-name.png').default,
+			mainImageSrc: require('../../static/img/projects/sav-name.png').default,
 			title: 'Sav Name',
 			description:
 				'Experimental project to create introduction animation using CSS-only',
@@ -243,9 +264,10 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/webgl-rain.png',
-			rightImageSrc: '/img/projects/webgl-rain.png',
-			mainImageSrc: '/img/projects/webgl-rain.png',
+			leftImageSrc: require('../../static/img/projects/webgl-rain.png').default,
+			rightImageSrc: require('../../static/img/projects/webgl-rain.png')
+				.default,
+			mainImageSrc: require('../../static/img/projects/webgl-rain.png').default,
 			title: 'Rain',
 			description:
 				'Experimental project using Canvas API to create a rain animation',
@@ -266,9 +288,12 @@ export default [
 			noiseWaterLevel: 0.2,
 		},
 		userData: {
-			leftImageSrc: '/img/projects/goldenautotech.jpg',
-			rightImageSrc: '/img/projects/goldenautotech.jpg',
-			mainImageSrc: '/img/projects/goldenautotech.jpg',
+			leftImageSrc: require('../../static/img/projects/goldenautotech.jpg')
+				.default,
+			rightImageSrc: require('../../static/img/projects/goldenautotech.jpg')
+				.default,
+			mainImageSrc: require('../../static/img/projects/goldenautotech.jpg')
+				.default,
 			title: 'Golden Autotech',
 			description: 'Company website for Golden Autotech',
 			viewUrl: 'http://www.gautotech.com/',

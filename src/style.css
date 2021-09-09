@@ -324,6 +324,18 @@ body {
 	color: var(--primary-color);
 	margin-bottom: 20px;
 }
+.about--contact-list > * {
+	display: block;
+	text-decoration: none;
+	color: white;
+	margin: 10px 0;
+	transition: all;
+}
+
+.about--contact-list > *:hover {
+	color: var(--primary-color);
+	opacity: 0.8;
+}
 
 .about--skill-item {
 	position: relative;

@@ -136,6 +136,13 @@ scene.background = new THREE.Color(0x000000);
  */
 // Earth
 const globesObj = [];
+// const requireContext = require.context(
+// 	'../static/img/projects/',
+// 	false,
+// 	/\.(png|jpe?g)$/
+// );
+// const imagesCollection = requireContext.keys().map(requireContext);
+// console.log(imagesCollection);
 globes.forEach((glb, i) => {
 	const globe = new Globe(glb);
 	rotateAboutPoint(
@@ -144,6 +151,12 @@ globes.forEach((glb, i) => {
 		new THREE.Vector3(0, 1, 0),
 		-(i * 2 * Math.PI) / globes.length
 	);
+	// glb.userData.leftImageSrc = require('../static' +
+	// 	glb.userData.leftImageSrc).default;
+	// glb.userData.rightImageSrc = require('../static' +
+	// 	glb.userData.rightImageSrc).default;
+	// glb.userData.mainImageSrc = require('../static' +
+	// 	glb.userData.mainImageSrc).default;
 	globesObj.push(globe.mesh);
 	scene.add(globe.mesh);
 });

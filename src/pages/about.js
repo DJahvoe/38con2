@@ -64,7 +64,11 @@ const about = {
             </div>
             <div class="about--contact">
                 <h1 class="about--contact-title">Contact</h1>
-                <p class="about--contact-list">[CONTACT PLACEHOLDER]</p>
+                <p class="about--contact-list">
+                    <a href="mailto:satriaadevk@gmail.com"><i class="fas fa-envelope"></i> satriaadevk@gmail.com</a>
+                    <a href="https://github.com/DJahvoe" target="_blank"><i class="fab fa-github"></i> DJahvoe</a>
+                    <a href="#" style="pointer-events:none"><i class="fab fa-discord"></i> Sav#9322</a>
+                </p>
             </div>
         </div>
 	</div>

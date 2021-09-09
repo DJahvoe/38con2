@@ -121,7 +121,7 @@ export async function createRocket(gltfLoader, rocketConf, defaultConf) {
 	let { scale } = rocketConf;
 	let rocket = new THREE.Object3D();
 	let rocketModel;
-	let gltf = await gltfLoader.loadAsync('/models/rocket/rocket.gltf');
+	let gltf = await gltfLoader.loadAsync('models/rocket/rocket.gltf');
 	rocketModel = gltf.scene;
 	rocketModel.scale.set(scale, scale, scale);
 	rocketModel.position.set(10, -2, 0);
